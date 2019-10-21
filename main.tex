@@ -1,0 +1,217 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,letter,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}    
+\usepackage{pdfpages}%
+
+
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\usepackage{multicol}
+% adjust the page margins
+\usepackage[scale=0.8,top=0.5cm, bottom=0.1cm]{geometry}
+% \usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+\usepackage{xpatch}
+\xpatchcmd\cventry{,}{}{}{}
+
+% personal data
+
+\name{Prathamesh}{Mandke}
+
+% optional, remove / comment the line if not wanted
+% \address{70 Absolute Ave.}{L4Z 0A4 Mississauga}{Canada}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\vspace*{3mm}
+%optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
+% \phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+ \email{pkmandke@vt.edu}                             % optional, remove / comment the line if not wanted
+\phone[mobile]{+1(540)~252~9660}                     % optional, remove / comment the line if not wanted
+ \social[linkedin]{pkmandke}
+ \homepage{pkmandke.github.io}
+ \extrainfo{Blacksburg, VA}
+ %\homepage{linkedin.com/in/pkmandke}                        % optional, remove / comment the line if not wanted
+%photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%%% Patch from here: https://tex.stackexchange.com/questions/457629/change-email-text-color-in-moderncv?rq=1
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\makecvhead} % <cmd>
+  {\ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}} % <search>
+  {\ifthenelse{\isundefined{\@email}}{}{\makenewline\textcolor{blue}{\emailsymbol\emaillink{\@email}}}%
+  } % <replace>
+  {}{} % <success><failure>
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\vspace*{-1.05mm}
+\makecvtitle
+\vspace*{-15mm}
+
+\section{Education}
+\cventry{August 2019 -- May 2021}{}{\large Virginia Tech}{Blacksburg, VA}{\hspace*{-2.9 mm} Master's in Computer Engineering (Software \& Machine Intelligence)}{\normalsize Coursework: \href{https://gist.github.com/pkmandke/672ff9333eaf449d69df28d9a37eecbb}{\textcolor{blue}{\underline{CS 6524: Deep Learning}}}, CS 5604: Information Storage \& Retrieval}
+
+%\vspace{-0.2em}
+%{\large Courses:}{ \small CS 6524: Deep Learning, CS 5604: Information Storage \& Retrieval}
+%\vspace{-0.1em}
+%\begin{small} 
+%    \begin{itemize}
+%\item Information Storage \& Retrieval
+
+% \end{itemize}
+%    \end{small}
+    \smallskip 
+    
+\cventry{August 2015 -- May 2019}{}{\large Govt. College of Engineering, Pune (COEP)}{Pune, India}{\hspace*{-2.5 mm} B.Tech Electronics \& Telecommunication (\small GPA: 9.11/10, Class Rank: 6/81)}{Minor in Computer Engineering}
+
+\vspace{-0.3em}
+{}{}
+\vspace*{7mm}
+\vspace{-3.0em}
+\begin{small}
+    \begin{multicols}{3}
+    \begin{itemize}
+    \item[\textbullet] Data Structures \item[\textbullet] Object Oriented Programming 
+\item[\textbullet] Information Theory \& Coding \item[\textbullet] Soft Computing
+\item[\textbullet] Embedded Software \& RTOS \item[\textbullet] Speech Processing
+    \end{itemize}
+\end{multicols}
+\end{small}
+    
+    
+
+\vspace{-2.2em}
+\section{Experience}
+\cventry{June 2019 -- July 2019 }{}{\large Flytbase, Inc.}{Pune, India}{\hspace{-0.2em}HackerSpace Intern - Deep Learning }{
+}
+\vspace{-1.0em}
+\begin{itemize} \normalsize{
+  
+\item[\textbullet] Worked on 1D (EAN-13 \& UPC) barcode localization in warehouse automation using drones.
+%\smallskip
+\item[\textbullet] Built a dataset with data augmentation and trained deep neural networks to detect multi-size barcodes.  
+%\smallskip
+\item[\textbullet] Trained Yolo, Faster RCNN and SSD models with Inception, ResNet and MobileNet backbones.
+%\smallskip
+\item[\textbullet] Explored embedded deployment of models on the Intel Neural Compute Stick using docker in linux.
+}
+\end{itemize}
+
+\smallskip
+
+\cventry{June 2017 -- July 2018}{}{\large Siemens, Ltd.}{Mumbai, India}{\hspace{-0.2em}Siemens Student Progam Intern }{
+}
+\vspace{-1.0em}
+\begin{itemize} \normalsize{
+  
+\item[\textbullet] Domain: Industrial Autonomous Systems
+%\smallskip%\smallskip
+\item[\textbullet] Re-vamped design, power circuit \& completed programming of the S7-1200 PLC for 3TS, 3TF and 3TH contactor testing automaton to achieve cycle time reduction.
+%\smallskip
+%\item The automaton has cleared commissioning & has been deployed on the assembly line at Siemens.
+%\smallskip
+\item[\textbullet] Keywords: Ladder coding, PLCs, stepper motors, transducers, auto-transformers \& DMM interfacing.
+}
+
+\end{itemize}
+
+
+
+\vspace{-0.7em}
+\section{Projects}
+\vspace{-0.2em}
+\cventry{}{}{\normalsize Deep Knowledge Transfer: CNN Model Compression for OpenCL-FPGA deployment }{Dec'18 - May'19 \vspace{-1.0em}}{}{
+% Detailed achievements:%
+%\vspace{-0.5em}
+\begin{itemize}\normalsize{
+    \item[\textbullet] Explored knowledge distillation in the regression based FaceNet CNN for model compression.
+\item[\textbullet] MobileNet architectures (75-85\% smaller than pre-trained Inception based models), used as student networks in the distillation pipeline. \textasciitilde1M VGG2 cropped face images used for knowledge transfer training.
+\item[\textbullet] Student networks achieve 80-83\% LFW accuracy when trained with MSE in a siamese-like student teacher setting.
+\item[\textbullet] OpenCL Kernels for each layer type in the teacher (Inception) and student (MobileNet) models deployed on Intel’s DE10 Nano FPGA SoC for CNN inference.
+\item[\textbullet] Skills: Python, Tensorflow, OpenCV, OpenCL. Details: \href{https://gist.github.com/pkmandke/34a811a7b0bc20a9fa62968a89a902e8}{\textcolor{blue}{\underline{here}}}}.
+\end{itemize}
+}
+% \vspace{1.0em}
+
+\cventry{}{}{\normalsize Human Posture Recognition using Artificial Neural Networks}{Feb 2018 - May 2018 \vspace{-1.0em}}{}{
+% Detailed achievements:%
+\begin{itemize} \normalsize{
+    \item[\textbullet] A system to classify human postures on a Raspberry-Pi using an Artificial Neural Network.
+    \item[\textbullet] Designed \& built PCB node to interface ESP8266 w/ MPU-6050 IMU sensor to transmit data to a Raspberry-pi.
+    \item[\textbullet] Used 2 sensor nodes(thigh and chest) to collect 44,800 samples and train \& deploy the neural network model using pure numpy. Accuracy: 97.5\%. Code: \href{https://bit.ly/2Ovel6a}{\textcolor{blue}{\underline{https://bit.ly/2Ovel6a}}}
+    \item[\textbullet] Skills/Tools: Python, C++, Raspberry-Pi, ESP8266. Dataset: \href{https://github.com/pkmandke/Human-Posture-Dataset}{\textcolor{blue}{\underline{here}}}.}
+\end{itemize}
+}
+
+
+\cventry{}{}{\normalsize Lempel-Ziv-Welch Text File Compression - A python package}{April 2018 - Sept 2018}{}{
+\vspace{-1.2em}
+\begin{itemize} \normalsize{
+    \item[\textbullet] A UTF-8 file compression package with average compression ratio (C.R.) of 0.5 and O(logn) phrase look-up complexity using the Trie data structure. Link to repository: \href{https://bit.ly/2vhGPHy}{\textcolor{blue}{\underline{https://bit.ly/2vhGPHy}}}
+    \item[\textbullet] Studied C.R. as a function of file probability distribution by generating and compressing synthetic files with Exponential, Poisson, Uniform and Gaussian distributions.}
+\end{itemize}}
+
+\vspace{-0.7em}
+\section{Publications}
+\cventry{}{}{}{}{}{
+% Detailed achievements:%
+\vspace{-2.5em}
+\begin{itemize}
+    \item \normalsize H. Kale, \textbf{P. Mandke}, H. Mahajan, V. Deshpande,"Human Posture Recognition using Artificial Neural Networks", 2018 IEEE 8th International Advance Computing Conference, Greater Noida, India, 2018, pp. 272-278.\\
+    Access: \href{https://ieeexplore.ieee.org/document/8692143}{\textcolor{blue}{\underline{https://ieeexplore.ieee.org/document/8692143}}}
+    \smallskip
+\end{itemize}}
+
+\vspace{-1.5em}
+\section{Skills}
+\vspace{-0.5em}
+\textbf{\large Proficient:} C, Python, Git, Tensorflow, Numpy. \\
+\textbf{\large Secondary:} C++, ROS, PyTorch, MATLAB, LaTEX, Verilog, HTML-CSS.
+
+% \vspace{1.0em}
+\vspace{-1.0em}
+\section{Awards \& Honors}
+\vspace{-0.5em}
+\begin{itemize}
+    \item[\textbullet] Awarded the \textbf{Narotam Sekhsaria Scholarship} for graduate studies.
+    \item[\textbullet] Gold Medalist Soft Computing MOOC by IIT-Kharagpur (NPTEL). Certificate: \href{https://drive.google.com/file/d/1dKUy8gFmk8qgwBTK5Nt_A5F2VZkxPQ9Y/view?usp=sharing}{\underline{\textcolor{blue}{here}}}.
+\end{itemize}
+
+
+  
+\end{document}
