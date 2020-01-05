@@ -17,6 +17,7 @@
 % character encoding
 \usepackage[utf8]{inputenc}    
 \usepackage{pdfpages}%
+\usepackage{verbatim} % For multi-line comments.
 
 
 % if you are not using xelatex ou lualatex, replace by the encoding you are using
@@ -155,6 +156,7 @@
 \vspace{-0.7em}
 \section{Projects}
 \vspace{-0.2em}
+
 \cventry{}{}{\normalsize Deep Knowledge Transfer: CNN Model Compression for OpenCL-FPGA deployment }{Dec'18 - May'19 \vspace{-1.0em}}{}{
 % Detailed achievements:%
 %\vspace{-0.5em}
@@ -163,11 +165,28 @@
 \item[\textbullet] MobileNet architectures (75-85\% smaller than pre-trained Inception based models), used as student networks in the distillation pipeline. \textasciitilde1M VGG2 cropped face images used for knowledge transfer training.
 \item[\textbullet] Student networks achieve 80-83\% LFW accuracy when trained with MSE in a siamese-like student teacher setting.
 \item[\textbullet] OpenCL Kernels for each layer type in the teacher (Inception) and student (MobileNet) models deployed on Intel’s DE10 Nano FPGA SoC for CNN inference.
-\item[\textbullet] Skills: Python, Tensorflow, OpenCV, OpenCL. Details: [\href{https://gist.github.com/pkmandke/34a811a7b0bc20a9fa62968a89a902e8}{\textcolor{blue}{\underline{github}}}}].
+\item[\textbullet] Skills: Python, Tensorflow, OpenCV, OpenCL. Details: [\href{https://gist.github.com/pkmandke/34a811a7b0bc20a9fa62968a89a902e8}{\textcolor{blue}{\underline{github}}}]}.
 \end{itemize}
 }
 % \vspace{1.0em}
 
+\cventry{}{}{\normalsize Clustering Large Scale Text Corpora for Efficient Information Retrieval}{Aug'19 - Dec'19 \vspace{-1.0em}}{}{
+% Detailed achievements:%
+\begin{itemize} \normalsize{
+    \item[\textbullet] Vectorized 2 large text corpora with ~33k and ~1M documents using Doc2Vec - a neural network based algorithm.
+    \item[\textbullet] Implemented K-Means clustering, Agglomerative clustering, DBSCAN and Birch using the document vectors.
+    \item[\textbullet] Cross-validation and benchmarking using the Calinski-Harasbasz Index, the Davies-Bouldin and the Silhoutte Score.
+    \item[\textbullet] Skills/Tools: Python, Docker, Kubernetes. Code: [\href{https://github.com/pkmandke/cs5604-tml-clustering}{\textcolor{blue}{\underline{github}}}].}
+\end{itemize}
+}
+
+\cventry{}{}{\normalsize Lempel-Ziv-Welch Text File Compression - A python package}{Apr'18 - Sept'18}{}{
+\vspace{-1.2em}
+\begin{itemize} \normalsize{
+    \item[\textbullet] A UTF-8 file compression package with average compression ratio (C.R.) of 0.5 and O(logn) phrase look-up complexity using the Trie data structure. Link to repository: [\href{https://bit.ly/2vhGPHy}{\textcolor{blue}{\underline{github}}}]
+    \item[\textbullet] Studied C.R. as a function of file probability distribution by generating and compressing synthetic files with Exponential, Poisson, Uniform and Gaussian distributions.}
+\end{itemize}}
+\begin{comment}
 \cventry{}{}{\normalsize Human Posture Recognition using Artificial Neural Networks}{Feb'18 - May'18 \vspace{-1.0em}}{}{
 % Detailed achievements:%
 \begin{itemize} \normalsize{
@@ -178,13 +197,17 @@
 \end{itemize}
 }
 
+\cventry{}{}{\normalsize Sparse View CT Image Reconstruction using Deep CNNs}{Sept'19 - Present \vspace{-1.0em}}{}{
+% Detailed achievements:%
+%\vspace{-0.5em}
+\begin{itemize}\normalsize{
+    \item[\textbullet] Designing CNN architecture for sparse view CT reconstruction based on transpose convolutions and skip connections.
+\item[\textbullet] Generated synthetic CT dataset with varying sparsity to train CNN models using SSIM and RMSE.
+\item[\textbullet] Skills: Python, PyTorch, MATLAB.}
+\end{itemize}
+}
 
-\cventry{}{}{\normalsize Lempel-Ziv-Welch Text File Compression - A python package}{Apr'18 - Sept'18}{}{
-\vspace{-1.2em}
-\begin{itemize} \normalsize{
-    \item[\textbullet] A UTF-8 file compression package with average compression ratio (C.R.) of 0.5 and O(logn) phrase look-up complexity using the Trie data structure. Link to repository: [\href{https://bit.ly/2vhGPHy}{\textcolor{blue}{\underline{github}}}]
-    \item[\textbullet] Studied C.R. as a function of file probability distribution by generating and compressing synthetic files with Exponential, Poisson, Uniform and Gaussian distributions.}
-\end{itemize}}
+\end{comment}
 
 \vspace{-0.7em}
 \section{Publications}
@@ -201,7 +224,7 @@
 \section{Skills}
 \vspace{-0.5em}
 \textbf{\large Primary:} C, Python, PyTorch, Tensorflow, Numpy, Git, Linux, Docker. \\
-\textbf{\large Secondary:} C++, ROS, MATLAB, LaTEX, Verilog, HTML-CSS.
+\textbf{\large Secondary:} C++, ROS, MATLAB, LaTeX, Verilog, HTML-CSS.
 
 % \vspace{1.0em}
 \vspace{-1.0em}
